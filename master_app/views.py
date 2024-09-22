@@ -181,7 +181,10 @@ def index(request):
             # url = f"{settings.HTTP_PROTOCOL}://{settings.DOMAIN_NAME_OR_IP_ADDRESS}/send_notification/?message={data}"
             # requests.get(url, timeout=3).json()
             # Send Gmail
-            email_send(data)
+            try:
+                email_send(data)
+            except Exception as e:
+                traceback.print_exc()
 
         except Exception as e: 
             traceback.print_exc()
