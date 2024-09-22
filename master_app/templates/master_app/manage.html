@@ -1,0 +1,64 @@
+{% extends  'master_app/base.html' %}
+
+
+{% block content %}
+<div class="container ">
+    <div class="row">
+        <div class="col-8 ">
+            <h3 class="mb-3">
+                Upload management - <span class="text-secondary">{{ uploaded_document.name }}</span>
+            </h3>
+            <div class=" p-3" style="background-color:#f9f9fa !important;">
+                <div class="row">
+                    <div class="col text-end text-secondary">Clearnet DL</div>
+                    <div class="col text-left"><a target="_blank" href="{{ uploaded_document.short_url }}">
+                        {{ uploaded_document.short_url }}
+                    </a></div>
+                </div>
+                
+                <div class="row"><div class="col text-end text-secondary">Size</div><div class="col text-left">{{ uploaded_document.file_size }}</div></div>
+                <div class="row"><div class="col text-end text-secondary">Type</div><div class="col text-left">{{ uploaded_document.file_type }}</div></div>
+                <div class="row"><div class="col text-end text-secondary">SHA1 Hashsum</div><div class="col text-left">{{ uploaded_document.file_hash }}</div></div>
+                <div class="row"><div class="col text-end text-secondary">Created</div><div class="col text-left">{{ uploaded_document.uploaded_at }}</div></div>
+                <div class="row"><div class="col text-end text-secondary">Expires</div><div class="col text-left">{{ uploaded_document.expires_at }}</div></div>
+                <div class="row"><div class="col text-end text-secondary">Destroy after DL</div><div class="col text-left">{{ uploaded_document.destroyAfterDownload }} <form class="d-inline" method="get">
+                    {% if uploaded_document.destroyAfterDownload is True %}
+                        <input type="hidden" name="toggleautodestroy" value="0">
+                    {% elif  uploaded_document.destroyAfterDownload is False %}
+                        <input type="hidden" name="toggleautodestroy" value="1">
+                    {% endif %}
+                    <button type="submit" class="btn btn-link">[toggle]</button></form></div></div>
+                
+                
+            </div>
+            <p> Use this button to delete the file permanently: </p>
+            <form method="GET" >
+                <input type="hidden" name="delete" value="1">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            <p class="mt-4"> Alternatively, you can extend the file expiration period: </p>
+            <form method="get">
+                <div class="row">
+                  <div class="col-md-2 mb-3">
+                      
+                      <select name="expire" class="custom-select" id="expsel">
+                        <option value="1">1 Hour</option>
+                        <option value="2" selected="">1 Day</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">7 Days</option>
+                        <option value="5">30 Days</option>
+                        <option value="6">60 Days</option>
+                      </select>
+                  
+                  </div>
+                  
+                  
+                  <div class="col-md-1 mb-3">
+                       <button type="submit" class="btn btn-primary">Submit</button>
+          
+                  </div>
+                </div>
+          </form>
+    </div>
+</div>
+{% endblock %}

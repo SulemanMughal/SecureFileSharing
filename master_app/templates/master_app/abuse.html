@@ -1,0 +1,47 @@
+{% extends  'master_app/base.html' %}
+
+{% block content %}
+
+
+<style>
+    .jumbotron {
+    padding: 4rem 2rem;
+    /* margin-bottom: 2rem; */
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+}
+</style>
+
+<div class="container">
+
+	<div class="jumbotron">
+	<h2>Drama section</h2>
+	<p>If you feel like sending an abuse report, please don't try sending abuse emails to the first IP address you see, breaking our front-end server operation will not delete the file and our service will be restored back quickly. Our backend server is well shadowrouted and it is behind <i>seven</i> reverse-proxies.</p>
+	
+	<p>All the data is located in a 3rd world country where perception and definition of terms such as "unlawful" may differ from yours.</p>
+	
+	<p>Please use the form below to get our concern about some stored file, but don't expect much because we generally don't give a fuck what is uploaded over here and we are against any censorship on the Internet. The only subject we will react fast to is child pornography. Do not ask us to provide IP addresses or any other identifying information, we don't store it <i>in order to protect your privacy... you're welcome.</i> Be polite if you wish to comment your request.</p>
+	
+	<p>If you attach digital copies of a subpoena or similar documents that show legal accusations against us based on our server's country legislation (which we do not disclose so you must guess), it may facilitate the resolution of your issue. To attach these, <a target="_blank" href="/">upload</a> your files using our service and link them in the 'Comment' section below.</p>
+	
+	<form method="post" >
+        {% csrf_token %}
+	  <div class="form-group">
+	    <label for="link" class="mb-2">Abusive file url (required)</label>
+	    <input type="text" name="url" class="form-control" id="link" placeholder="http://securefileshell.at/xnSbQpX">
+	  </div>
+	  <div class="form-group my-3">
+	    <label for="email" class="mb-2">Email address (optional)</label>
+	    <input type="email" name="email" class="form-control" id="email" placeholder="john@securefileshell.com">
+	  </div>
+	  <div class="form-group">
+	    <label for="drama" class="mb-2">Comments (not necessary)</label>
+	    <textarea class="form-control" name="comment" id="drama" rows="3"></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-primary my-3">Report file</button>
+	</form>
+	</div>
+
+</div>
+
+{% endblock  %}

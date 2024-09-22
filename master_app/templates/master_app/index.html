@@ -1,0 +1,68 @@
+{% extends  'master_app/base.html' %}
+{% load django_hide %}
+
+{%  load static %}
+
+{% block content %}
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-6 mx-auto my-5 py-3">
+                <p class=" card-text text-center fs-6">
+                    Max. Uploading Size Limit : 100 MB
+                </p>
+                  <form enctype='multipart/form-data' action="." method='POST' class="dropzone dz " id="my-dropzone" >
+                    {% h_csrf_token %}
+                    <div class="fallback ">
+                      <input name="myfile" type="file" multiple />
+                    </div>
+                </form>
+                <div class="row mt-3">
+                    <div class="col-3">
+                        <select name="expire" class="form-control form-control-sm" id="expsel">
+                          <option value="1">1 Hour</option>
+                          <option value="2" selected="">1 Day</option>
+                          <option value="3">3 Days</option>
+                          <option value="4">7 Days</option>
+                          <option value="5">30 Days</option>
+                          <option value="6">60 Days</option>
+                        </select>
+                    </div>
+                    <div class=" col-3 px-0">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" name="autodestroy" class="custom-control-input" id="autodestroy">
+                          <label class="custom-control-label" for="autodestroy">Destroy after DL</label>
+                        </div>
+                    </div>
+                    <div class="col-3 px-0">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" name="randomizefn" class="custom-control-input" id="randomizefn" checked="" >
+                          <label class="custom-control-label " for="randomizefn">Randomize name</label>
+                        </div>
+                    </div>
+                    <div class="col-3 px-3">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" name="shorturl" class="custom-control-input" id="shorturl" checked="" >
+                          <label class="custom-control-label" for="shorturl">Short URL</label>
+                        </div>
+                    </div>
+                    
+                  </div>
+
+                <ul id="upload-filelist" class="completed mx-0 d-none">
+                    
+                    <li class="file total "  data-filename="">
+                        <span class="file-name">Done!</span>
+                        
+                        <span class="file-size"></span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/custom.js' %}"></script>
+    
+{% endblock %}
