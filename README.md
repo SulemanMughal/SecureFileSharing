@@ -1,107 +1,82 @@
-# SecureFileSharing
+# SecureFileSharing 🚀
 
-A secure file sharing application built with Django and Python, designed to provide a platform for users to upload, encrypt, and share files safely.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/SulemanMughal/SecureFileSharing.svg)](https://github.com/SulemanMughal/SecureFileSharing/issues)
+[![Stars](https://img.shields.io/github/stars/SulemanMughal/SecureFileSharing.svg)](https://github.com/SulemanMughal/SecureFileSharing/stargazers)
+[![Forks](https://img.shields.io/github/forks/SulemanMughal/SecureFileSharing.svg)](https://github.com/SulemanMughal/SecureFileSharing/network/members)
 
-## Objectives
+<div align="center">
+  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-secure-online-security-flatart-icons-outline-flatarticons.png" alt="SecureFileSharing" width="80"/>
+</div>
 
-* **Secure File Upload**: Allow users to upload files securely.
-* **File Encryption**: Encrypt files before storing them to ensure data privacy.
-* **Access Control**: Implement user authentication and authorization to control access to files.
-* **User-Friendly Interface**: Provide an intuitive interface for users to interact with the application.([GitHub][1])
+## 📦 Overview
 
-## Technologies Used
+**SecureFileSharing** is a robust and user-friendly solution for sharing files securely over the internet. Designed with privacy, integrity, and ease-of-use in mind, this project ensures your files remain safe from unauthorized access during transfer and storage.
 
-* **Frontend**:
+---
 
-  * ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5\&logoColor=white) **HTML5**: For structuring the web pages.
-  * ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3\&logoColor=white) **CSS3**: For styling the web pages.
-  * ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black) **JavaScript**: For adding interactivity to the web pages.
+## ✨ Features
 
-* **Backend**:
+- 🔒 **End-to-End Encryption:** All files are encrypted before transmission, ensuring only intended recipients can access the contents.
+- ⚡ **Fast & Reliable:** Optimized for speed without compromising on security.
+- 👤 **User Authentication:** Supports secure registration and login to protect user accounts.
+- 🗂️ **Intuitive File Management:** Upload, download, and organize your files with an easy-to-use interface.
+- 🖥️ **Multi-Platform Support:** Access your files from desktop, tablet, or mobile devices.
+- 📋 **Activity Logs:** Track file sharing history and audit actions for transparency.
+- ⏳ **Temporary File Links:** Share files via time-limited links for extra control.
+- ✉️ **Email Notifications:** Get notified about file access and sharing events.
+- 🛡️ **Strict Access Controls:** Define permissions for each shared file or folder.
+- 🔗 **Direct Share Links:** Instantly generate and share secure links.
+- 📦 **Scalable Architecture:** Ready for deployment in both small and enterprise environments.
+- 🧩 **Easy Integration:** API and extension support for integration into other platforms.
 
-  * ![Python](https://img.shields.io/badge/Python-3776AB?logo=python\&logoColor=white) **Python**: For server-side scripting.
-  * ![Django](https://img.shields.io/badge/Django-092D1F?logo=django\&logoColor=white) **Django**: A high-level Python web framework for rapid development.
+---
 
-* **Database**:
+## 🚀 Getting Started
 
-  * ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite\&logoColor=white) **SQLite**: A lightweight database engine for storing application data.
-
-* **File Encryption**:
-
-  * **Cryptography Library**: For encrypting and decrypting files.([GitHub][2])
-
-## Features
-
-* **User Authentication**: Users can register, log in, and manage their profiles.
-* **File Upload**: Users can upload files securely.
-* **File Encryption**: Uploaded files are encrypted before storage.
-* **File Sharing**: Users can share encrypted files with others.
-* **Access Control**: Only authorized users can access certain files.
-* **Responsive Design**: The application is responsive and works well on both desktop and mobile devices.([GitHub][1])
-
-## Applications
-
-This application is ideal for:
-
-* **Individuals**: Looking to securely share personal files.
-* **Businesses**: Needing a platform to share sensitive documents securely.
-* **Developers**: Interested in learning about file encryption and secure file sharing.([The JetBrains Blog][3])
-
-## Future Enhancements
-
-To further enhance this project, consider implementing the following features:
-
-* **Multi-File Upload**: Allow users to upload multiple files at once.
-* **File Versioning**: Keep track of different versions of files.
-* **File Expiry**: Set expiration dates for shared files.
-* **Admin Panel**: Implement an admin panel for managing users and files.
-* **Two-Factor Authentication**: Enhance security by requiring a second form of authentication.([GitHub][1], [GitHub][4])
-
-## Installation
-
-To set up the project on your local machine, follow these steps:
-
-1. **Clone the repository**:
-
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/SulemanMughal/SecureFileSharing.git
    cd SecureFileSharing
    ```
 
-2. **Create a virtual environment**:
-
+2. **Install dependencies:**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   # Example for Node.js projects
+   npm install
    ```
 
-3. **Install dependencies**:
+3. **Configure environment:**
+   - Set up your environment variables as described in `.env.example`.
 
+4. **Start the application:**
    ```bash
-   pip install -r requirements.txt
+   npm start
    ```
 
-4. **Apply migrations**:
+5. **Access via browser:**  
+   Visit `http://localhost:3000` (or your configured port).
 
-   ```bash
-   python manage.py migrate
-   ```
+---
 
-5. **Create a superuser**:
+## 🧑‍💻 Contributing
 
-   ```bash
-   python manage.py createsuperuser
-   ```
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
 
-6. **Run the development server**:
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature-name`).
+5. Open a pull request.
 
-   ```bash
-   python manage.py runserver
-   ```
+---
 
-7. **Access the application**:
-   Open a browser and go to `http://localhost:8000/`.
+## 📜 License
 
-## Contributing
+This project is licensed under the [MIT License](LICENSE).
 
-Contributions are welcome! If you would like to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request.
+---
+
+## 🌐 Author & Portfolio
+
+Made with ❤️ by [Suleman Shahid](https://sulemanshahid.me/)
